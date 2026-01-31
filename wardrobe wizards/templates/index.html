@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styling AI</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">✎ Styling AI</div>
+    <nav>
+        <a href="#home" id="homeLink">Home</a>
+        <a href="#features" id="featuresLink">Features</a>
+        <a href="#try" id="tryLink">Try It</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Your Personal AI<br>Fashion Stylist</h1>
+        <p>Upload your photo and get personalized styling recommendations</p>
+
+        <button type="button" class="btn" id="getStartedBtn">
+            Get Started
+        </button>
+    </div>
+
+    <div class="hero-box">
+        <img src="/static/images/hero-model.png" alt="Fashion">
+    </div>
+</section>
+
+<!-- ⭐ FEATURES ON HOME SCREEN ⭐ -->
+<section class="features" id="features">
+    <h2>Why Choose Styling AI?</h2>
+
+    <div class="cards">
+        <div class="card">
+            📸
+            <strong>Instant Analysis</strong>
+            <p>AI instantly analyzes your uploaded photo</p>
+        </div>
+
+        <div class="card">
+            🎨
+            <strong>Color Matching</strong>
+            <p>Outfits matched perfectly to your skin tone</p>
+        </div>
+
+        <div class="card">
+            🧠
+            <strong>AI Recommendations</strong>
+            <p>Personalized fashion and styling advice</p>
+        </div>
+
+        <div class="card">
+            🛍
+            <strong>Shop & Style</strong>
+            <p>Direct shopping on Myntra by category</p>
+        </div>
+
+        <div class="card">
+            ⭐
+            <strong>Professional Tips</strong>
+            <p>Expert grooming and fashion suggestions</p>
+        </div>
+    </div>
+</section>
+
+<!-- TRY / UPLOAD SECTION -->
+<section id="try" class="try hidden">
+    <h2>Upload Your Photo</h2>
+
+    <div class="gender-box">
+        <label><input type="radio" name="gender" value="Male" checked> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+    </div>
+
+    <form id="styleForm" class="upload-box">
+        <input type="file" id="imageInput" name="image" hidden required>
+
+        <div class="drop-area" id="dropArea">
+            <button type="button" onclick="document.getElementById('imageInput').click()">
+                Click to Browse
+            </button>
+        </div>
+
+        <button type="submit" class="analyze-btn">
+            Analyze Style
+        </button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <div class="style-options hidden" id="styleOptions">
+        <h3>Select a Style to Shop on Myntra</h3>
+
+        <div class="style-grid">
+            <label onclick="goToShop('casual')">Casual & Daily Wear</label>
+            <label onclick="goToShop('formal')">Formal & Work Wear</label>
+            <label onclick="goToShop('party')">Party Wear</label>
+            <label onclick="goToShop('traditional')">Traditional Wear</label>
+            <label onclick="goToShop('sports')">Sports Wear</label>
+            <label onclick="goToShop('comfort')">Comfort Wear</label>
+        </div>
+    </div>
+</section>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
